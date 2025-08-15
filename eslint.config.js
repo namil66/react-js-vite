@@ -78,6 +78,22 @@ export default defineConfig([
       // 정의되지 않은 JSX 컴포넌트 사용 감지
       'react/jsx-no-undef': 'error',
 
+      // JSX 요소에 대한 후행 쉼표 규칙 비활성화
+      'prettier/prettier': [
+        'error',
+        {
+          trailingComma: 'es5',
+          overrides: [
+            {
+              files: '*.jsx',
+              options: {
+                trailingComma: 'none',
+              },
+            },
+          ],
+        },
+      ],
+
       // 화살표 함수 본문 스타일
       // - 간결한 표현식 강제
       // - 단일 표현식일 때 중괄호와 return 생략 강제
