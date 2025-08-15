@@ -1,27 +1,17 @@
 {
-  
-  "search.exclude": {
-    "**/coverage": true,
-    "**/node_modules": true
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
   },
-
-  "javascript.autoClosingTags": true,
-  "javascript.format.enable": false,
-  "javascript.validate.enable": false,
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "javascript.format.insertSpaceAfterSemicolonInForStatements": true,
-  "javascript.inlayHints.parameterNames.enabled": "all",
-  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
-  "javascript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": true,
-  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
-  "javascript.inlayHints.variableTypes.enabled": true,
-  "javascript.suggest.autoImports": true,
+  
+  // 기본 경로 자동완성 비활성화 (Path Intellisense만 사용)
+  "typescript.suggest.paths": false,
   "javascript.suggest.paths": false,
 
-  "editor.codeActionsOnSave": {
-    "source.organizeImports": "explicit",
-    "source.fixAll.eslint": "explicit",
-    "source.removeUnused": "explicit"
-  },
-
+  // Path Intellisense 설정
+  "path-intellisense.extensionOnImport": true, // import 시 확장자까지 자동완성
+  "path-intellisense.showHiddenFiles": true, // 숨김 파일도 자동완성
+  "path-intellisense.autoSlashAfterDirectory": true, // 폴더 뒤에 / 자동 추가
+  "path-intellisense.absolutePathToWorkspace": true, // 절대경로를 워크스페이스 기준으로
+  "path-intellisense.ignoreTsConfigBaseUrl": false, // jsconfig/tsconfig의 baseUrl, paths를 사용
 }

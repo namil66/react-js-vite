@@ -1,4 +1,4 @@
-import RandomCountUp from './demo/app'
+import RandomCountUp from '@/demo/app'
 
 export default function App() {
   return (

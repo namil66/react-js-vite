@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
-import { getRandomCount, setAppColor, setDocumentTitle } from './utils'
-import Shortcut from './shortcut'
-import Output from './output'
-import Logo from './logo'
+
 import './app.css'
+import Logo from './logo'
+import Output from './output'
+import Shortcut from './shortcut'
+import { getRandomCount, setAppColor, setDocumentTitle } from './utils'
 
 const MIN = 50
 const MAX = 90
