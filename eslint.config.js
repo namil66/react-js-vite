@@ -1,5 +1,4 @@
 import js from '@eslint/js'
-
 import pluginJsxA11y from 'eslint-plugin-jsx-a11y'
 import pluginPrettierRecommand from 'eslint-plugin-prettier/recommended'
 import pluginReact from 'eslint-plugin-react'
@@ -78,11 +77,28 @@ export default defineConfig([
       // 정의되지 않은 JSX 컴포넌트 사용 감지
       'react/jsx-no-undef': 'error',
 
-      // JSX 요소에 대한 후행 쉼표 규칙 비활성화
+      // React 프로퍼티 타입 검사 비활성화
+      // - TypeScript 사용 환경에서는 불필요
+      // - React 17+ 버전에서는 PropTypes 사용 빈도가 낮음
+      'react/prop-types': 'off',
+
+      // JSX 내 단일 요소 줄바꿈 강제화
+      // - 코드 가독성 향상
+      // - 복잡한 JSX 구조에서 일관성 유지
+      'react/jsx-wrap-multilines': 'error',
+
+      // JSX 컴포넌트의 올바른 명명 규칙 강제
+      // - PascalCase 형식 사용 (예: MyComponent)
+      // - DOM 요소와 컴포넌트 구분 용이
+      'react/jsx-pascal-case': 'error',
+
+      // Prettier 규칙
       'prettier/prettier': [
         'error',
         {
           trailingComma: 'es5',
+          importOrderSeparation: false,
+          // JSX 요소인 경우, 규칙 덮어쓰기
           overrides: [
             {
               files: '*.jsx',
