@@ -5,12 +5,6 @@ import pluginReact from 'eslint-plugin-react'
 import pluginReactHooks from 'eslint-plugin-react-hooks'
 import { defineConfig, globalIgnores } from 'eslint/config'
 import globals from 'globals'
-import fs from 'node:fs'
-import path from 'node:path'
-
-const prettierConfigPath = path.resolve('.prettierrc')
-const prettierConfig = JSON.parse(fs.readFileSync(prettierConfigPath, 'utf8'))
-const { importOrder } = prettierConfig
 
 export default defineConfig([
   // 'dist' 폴더 전체를 ESLint 검사에서 제외 (빌드된 결과물 무시)
@@ -103,7 +97,6 @@ export default defineConfig([
         'error',
         {
           trailingComma: 'es5',
-          importOrder,
 
           // JSX 요소인 경우, 규칙 덮어쓰기
           overrides: [
